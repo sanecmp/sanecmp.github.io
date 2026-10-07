@@ -649,6 +649,14 @@ h3 {
   margin-top: 8px;
 }
 
+.install-card li .command-block {
+  margin-top: 12px;
+}
+
+.install-card ol + .config-note {
+  margin-top: 20px;
+}
+
 pre {
   background: #101315;
   border: 1px solid #383e42;

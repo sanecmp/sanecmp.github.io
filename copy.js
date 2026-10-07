@@ -31,7 +31,7 @@
       }
       window.setTimeout(() => {
         button.textContent = "⧉";
-        button.setAttribute("aria-label", russian ? "Скопировать команду" : "Copy command");
+        button.setAttribute("aria-label", document.documentElement.lang === "ru" ? "Скопировать команду" : "Copy command");
       }, 1200);
     });
   });

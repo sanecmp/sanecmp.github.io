@@ -252,23 +252,27 @@
               <h3>sanea</h3>
             </div>
             <ol>
-              <li>Скачайте установщик и запустите его от имени root.</li>
-              <li>Создайте учётную запись администратора.</li>
-              <li>На компьютере с sanea откройте <a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a> и войдите.</li>
-            </ol>
-            <div class="command-block">
-              <button class="copy-button" type="button" data-copy="curl -fsSL https://raw.githubusercontent.com/sanecmp/sanea/main/install.sh -o install-sanea.sh &amp;&amp; sudo sh install-sanea.sh" aria-label="Скопировать команду" title="Скопировать команду">⧉</button>
-              <pre><code><span class="prompt">$</span> curl -fsSL \
+              <li>
+                Скачайте установщик и запустите его от имени root.
+                <div class="command-block">
+                  <button class="copy-button" type="button" data-copy="curl -fsSL https://raw.githubusercontent.com/sanecmp/sanea/main/install.sh -o install-sanea.sh &amp;&amp; sudo sh install-sanea.sh" aria-label="Скопировать команду" title="Скопировать команду">⧉</button>
+                  <pre><code><span class="prompt">$</span> curl -fsSL \
   https://raw.githubusercontent.com/sanecmp/sanea/main/install.sh \
   -o install-sanea.sh &amp;&amp;
 sudo sh install-sanea.sh</code></pre>
-            </div>
-            <div class="command-block">
-              <button class="copy-button" type="button" data-copy="sudo sanea createsuperuser" aria-label="Скопировать команду" title="Скопировать команду">⧉</button>
-              <pre><code><span class="prompt">$</span> sudo sanea createsuperuser</code></pre>
-            </div>
+                </div>
+              </li>
+              <li>
+                Создайте учётную запись администратора.
+                <div class="command-block">
+                  <button class="copy-button" type="button" data-copy="sudo sanea createsuperuser" aria-label="Скопировать команду" title="Скопировать команду">⧉</button>
+                  <pre><code><span class="prompt">$</span> sudo sanea createsuperuser</code></pre>
+                </div>
+              </li>
+              <li>На компьютере с sanea откройте <a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a> и войдите.</li>
+            </ol>
             <p class="config-note"><strong>Установщик сделает остальное:</strong> создаст локальную базу и ключи, настроит автозапуск и сразу запустит sanea.</p>
-            <p class="config-note"><strong>Для разных устройств:</strong> добавьте локальный IP sanea в SANEA_ALLOWED_HOSTS и разрешите HTTPS и UDP-обнаружение в домашней сети. <a href="https://github.com/sanecmp/sanea#system-installation">Полная инструкция</a></p>
+            <p class="config-note"><strong>Если sanea и sanex на разных компьютерах:</strong> локальные IP-адреса sanea установщик добавит в SANEA_ALLOWED_HOSTS при установке. Разрешите HTTPS и UDP-обнаружение в домашней сети. <a href="https://github.com/sanecmp/sanea#home-network-access">Полная инструкция</a></p>
           </article>
 
           <article class="install-card">
@@ -277,21 +281,25 @@ sudo sh install-sanea.sh</code></pre>
               <h3>sanex</h3>
             </div>
             <ol>
-              <li>Скачайте установщик и запустите его от имени root.</li>
-              <li>В разделе «Компьютеры» sanea откройте регистрацию на 30 секунд.</li>
-              <li>Замените YOUR-CODE в команде на показанный в sanea код вида ABCD-EFGH.</li>
-            </ol>
-            <div class="command-block">
-              <button class="copy-button" type="button" data-copy="curl -fsSL https://raw.githubusercontent.com/sanecmp/sanex/main/install.sh -o install-sanex.sh &amp;&amp; sudo sh install-sanex.sh" aria-label="Скопировать команду" title="Скопировать команду">⧉</button>
-              <pre><code><span class="prompt">$</span> curl -fsSL \
+              <li>
+                Скачайте установщик и запустите его от имени root.
+                <div class="command-block">
+                  <button class="copy-button" type="button" data-copy="curl -fsSL https://raw.githubusercontent.com/sanecmp/sanex/main/install.sh -o install-sanex.sh &amp;&amp; sudo sh install-sanex.sh" aria-label="Скопировать команду" title="Скопировать команду">⧉</button>
+                  <pre><code><span class="prompt">$</span> curl -fsSL \
   https://raw.githubusercontent.com/sanecmp/sanex/main/install.sh \
   -o install-sanex.sh &amp;&amp;
 sudo sh install-sanex.sh</code></pre>
-            </div>
-            <div class="command-block">
-              <button class="copy-button" type="button" data-copy="sudo /opt/sanex/bin/sanex register YOUR-CODE" aria-label="Скопировать команду" title="Скопировать команду">⧉</button>
-              <pre><code><span class="prompt">$</span> sudo /opt/sanex/bin/sanex register YOUR-CODE</code></pre>
-            </div>
+                </div>
+              </li>
+              <li>В разделе «Компьютеры» sanea откройте регистрацию на 30 секунд.</li>
+              <li>
+                Замените YOUR-CODE в команде на показанный в sanea код вида ABCD-EFGH.
+                <div class="command-block">
+                  <button class="copy-button" type="button" data-copy="sudo /opt/sanex/bin/sanex register YOUR-CODE" aria-label="Скопировать команду" title="Скопировать команду">⧉</button>
+                  <pre><code><span class="prompt">$</span> sudo /opt/sanex/bin/sanex register YOUR-CODE</code></pre>
+                </div>
+              </li>
+            </ol>
             <p class="config-note"><strong>После регистрации:</strong> служба запустится автоматически, а sanea получит список локальных учётных записей. Наблюдение останется выключено до вашего решения.</p>
             <p class="config-note"><a href="https://github.com/sanecmp/sanex#system-installation">Полная инструкция</a></p>
           </article>
