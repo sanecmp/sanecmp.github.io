@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 240" role="img" aria-labelledby="title desc">
+  <title id="title">sanecmp</title>
+  <desc id="desc">sanecmp logo for dark backgrounds.</desc>
+  <rect width="960" height="240" rx="36" fill="#22272b"/>
+  <g transform="translate(24 24) scale(.375)">
+    <rect width="512" height="512" rx="112" fill="#161a1d"/>
+    <path d="M114 200c0-47 38-85 85-85h64v92h-64a7 7 0 0 0-7 7v84a7 7 0 0 0 7 7h49v92h-49c-47 0-85-38-85-85V200z" fill="#bd4a22"/>
+    <path d="M398 312c0 47-38 85-85 85h-64v-92h64a7 7 0 0 0 7-7v-84a7 7 0 0 0-7-7h-49v-92h49c47 0 85 38 85 85v112z" fill="#71886b"/>
+    <rect x="220" y="216" width="72" height="80" rx="36" fill="#fbf8f3"/>
+  </g>
+  <text x="250" y="151" fill="#df7955" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="104" font-weight="800" letter-spacing="-7">sane<tspan fill="#93a78d">cmp</tspan></text>
+</svg>

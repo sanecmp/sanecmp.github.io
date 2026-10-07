@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="sanecmp — локальная система настройки ограничений и сбора статистики использования компьютера.">
+  <meta name="theme-color" content="#22272b">
+  <title>sanecmp — управление использованием компьютера</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="language.js" defer></script>
+  <script src="copy.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="wordmark" href="#top" aria-label="sanecmp, на главную"><img src="favicon.svg" alt="">sane<span>cmp</span></a>
+      <nav aria-label="Основная навигация">
+        <a href="#system">Система</a>
+        <a href="#principles">Принципы</a>
+        <a href="#install">Установка</a>
+        <a class="button button-small" href="#install">Начать</a>
+        <div class="language-switch" aria-label="Language / Язык">
+          <button type="button" data-language="ru">RU</button>
+          <button type="button" data-language="en">EN</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Ограничения и статистика · локально</p>
+          <h1>Расписания и лимиты <span>для компьютера.</span></h1>
+          <p class="lead">
+            sanea устанавливается на родительский компьютер или домашний NAS и хранит настройки.
+            sanex применяет их на компьютере ребёнка и собирает статистику использования.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#install">Установить</a>
+            <a class="button button-ghost" href="#system">Как устроено</a>
+          </div>
+          <ul class="hero-facts" aria-label="Ключевые свойства">
+            <li><strong>Debian + GNOME</strong><span>целевая платформа</span></li>
+            <li><strong>mTLS</strong><span>защищённый обмен</span></li>
+            <li><strong>Без облака</strong><span>данные остаются дома</span></li>
+          </ul>
+        </div>
+
+        <div class="life-example" aria-label="Пример дневного лимита">
+          <div class="example-head">
+            <div>
+              <span class="overline">Сегодня</span>
+              <h2>Алексей</h2>
+            </div>
+            <span class="avatar" aria-hidden="true">А</span>
+          </div>
+          <div class="time-ring" aria-label="Использовано 1 час 58 минут из 3 часов">
+            <div>
+              <strong>1:02</strong>
+              <span>осталось сегодня</span>
+            </div>
+          </div>
+          <div class="time-summary">
+            <div>
+              <span>Дневной лимит</span>
+              <strong>3:00</strong>
+            </div>
+            <div>
+              <span><i></i>Использовано</span>
+              <strong>1:58</strong>
+            </div>
+          </div>
+          <div class="rule-list">
+            <div class="rule-row">
+              <span class="status-dot status-ok"></span>
+              <strong>Учёба</strong>
+              <span>без ограничений</span>
+            </div>
+            <div class="rule-row">
+              <span class="status-dot status-time"></span>
+              <strong>Игры</strong>
+              <span>осталось 42 мин из 1 ч</span>
+            </div>
+          </div>
+          <p class="example-note">Правила продолжают действовать, даже если родительское приложение выключено.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="system section-light" id="system">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Архитектура</p>
+            <h2>Связаны по сети.<br>Независимы в работе.</h2>
+          </div>
+          <p class="lead">
+            Родитель управляет правилами через браузер. Системная служба на компьютере
+            ребёнка применяет сохранённые настройки автономно.
+          </p>
+        </div>
+
+        <div class="architecture">
+          <article class="component-card">
+            <div class="component-label">Родительское приложение</div>
+            <div class="component-title">
+              <span class="component-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="15" rx="2"/><path d="M3 9h18M8 9v10"/></svg>
+              </span>
+              <h3>sanea</h3>
+            </div>
+            <p>Панель управления для родительского компьютера или домашнего NAS.</p>
+            <ul>
+              <li>регистрирует компьютеры и локальные учётные записи;</li>
+              <li>создаёт расписания, лимиты сеансов и правила приложений;</li>
+              <li>хранит настройки и полученную статистику в локальной SQLite;</li>
+              <li>показывает активность детей со всех связанных устройств.</li>
+            </ul>
+          </article>
+
+          <div class="connection" aria-label="Защищённый обмен в локальной сети">
+            <span>конфигурация</span>
+            <div class="connection-line"></div>
+            <strong>mTLS · LAN</strong>
+            <div class="connection-line reverse"></div>
+            <span>события</span>
+          </div>
+
+          <article class="component-card">
+            <div class="component-label">Компьютер ребёнка</div>
+            <div class="component-title">
+              <span class="component-icon component-icon-sage" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 7h6M8 17h8M8 13h3"/></svg>
+              </span>
+              <h3>sanex</h3>
+            </div>
+            <p>Небольшая системная служба без привязки ко входу пользователя.</p>
+            <ul>
+              <li>учитывает пользовательские сеансы и приложения;</li>
+              <li>применяет расписание и лимиты к выбранным учётным записям;</li>
+              <li>хранит состояние и события в защищённых локальных файлах;</li>
+              <li>синхронизируется с sanea при доступности сети.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="principles" id="principles">
+      <div class="container principles-grid">
+        <div>
+          <p class="eyebrow eyebrow-soft">Принципы работы</p>
+          <h2>Как применяются правила</h2>
+          <p class="lead">
+            Наблюдение и ограничения включаются отдельно для каждой учётной записи.
+            Родительская учётная запись может оставаться вне наблюдения.
+          </p>
+        </div>
+        <div class="principle-list">
+          <article>
+            <span>01</span>
+            <h3>Данные остаются дома</h3>
+            <p>Конфигурация и статистика хранятся на ваших устройствах, без внешнего сервиса.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Не требует постоянного подключения</h3>
+            <p>sanex продолжает применять сохранённые правила и копит события для последующей передачи.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Только нужный сеанс</h3>
+            <p>При исчерпании лимита завершается сеанс ребёнка, а не работа всего компьютера.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Явные настройки</h3>
+            <p>Расписания, продолжительность сеансов и лимиты приложений задаются явно.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="flow section-light">
+      <div class="container">
+        <div class="section-heading compact">
+          <div>
+            <p class="eyebrow">Первый запуск</p>
+            <h2>От установки до правил</h2>
+          </div>
+          <p class="lead">Четыре действия — и компьютер готов работать автономно.</p>
+        </div>
+        <ol class="flow-steps">
+          <li>
+            <span>01</span>
+            <h3>Запустите sanea</h3>
+            <p>Установщик настроит и запустит службу на родительском компьютере или домашнем NAS.</p>
+          </li>
+          <li>
+            <span>02</span>
+            <h3>Установите sanex</h3>
+            <p>Разверните службу на Debian-компьютере ребёнка от имени root.</p>
+          </li>
+          <li>
+            <span>03</span>
+            <h3>Свяжите устройства</h3>
+            <p>Откройте регистрацию в sanea и введите одноразовый код командой sanex.</p>
+          </li>
+          <li>
+            <span>04</span>
+            <h3>Назначьте правила</h3>
+            <p>Выберите учётную запись, настройте расписание и лимиты, включите сбор и применение ограничений.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="install" id="install">
+      <div class="container">
+        <div class="section-heading section-heading-dark">
+          <div>
+            <p class="eyebrow">Установка</p>
+            <h2>Установка sanea и sanex</h2>
+          </div>
+          <p class="lead">
+            Установщики размещают приложения и настраивают системные службы.
+            sanea запускается сразу, sanex — после регистрации компьютера.
+          </p>
+        </div>
+
+        <p class="config-note install-requirements">
+          Для установки из основных веток GitHub добавьте --from-github к команде установщика.
+          Этот режим дополнительно требует git.
+        </p>
+
+        <p class="config-note install-requirements">
+          <strong>Перед установкой:</strong>
+          нужны curl, системный Python 3.12+ и
+          <a href="https://docs.astral.sh/uv/getting-started/installation/">uv</a>.
+          Python и uv должны принадлежать root и быть недоступны ребёнку для изменения.
+          Для sanex требуется Debian-based Linux с GNOME, systemd и AccountsService на x86-64.
+        </p>
+
+        <div class="install-grid">
+          <article class="install-card">
+            <div class="install-card-head">
+              <span>На компьютере родителя или NAS</span>
+              <h3>sanea</h3>
+            </div>
+            <ol>
+              <li>Скачайте установщик и запустите его от имени root.</li>
+              <li>Создайте учётную запись администратора.</li>
+              <li>На компьютере с sanea откройте <a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a> и войдите.</li>
+            </ol>
+            <div class="command-block">
+              <button class="copy-button" type="button" data-copy="curl -fsSL https://raw.githubusercontent.com/sanecmp/sanea/main/install.sh -o install-sanea.sh &amp;&amp; sudo sh install-sanea.sh" aria-label="Скопировать команду" title="Скопировать команду">⧉</button>
+              <pre><code><span class="prompt">$</span> curl -fsSL \
+  https://raw.githubusercontent.com/sanecmp/sanea/main/install.sh \
+  -o install-sanea.sh &amp;&amp;
+sudo sh install-sanea.sh</code></pre>
+            </div>
+            <div class="command-block">
+              <button class="copy-button" type="button" data-copy="sudo sanea createsuperuser" aria-label="Скопировать команду" title="Скопировать команду">⧉</button>
+              <pre><code><span class="prompt">$</span> sudo sanea createsuperuser</code></pre>
+            </div>
+            <p class="config-note"><strong>Установщик сделает остальное:</strong> создаст локальную базу и ключи, настроит автозапуск и сразу запустит sanea.</p>
+            <p class="config-note"><strong>Для разных устройств:</strong> добавьте локальный IP sanea в SANEA_ALLOWED_HOSTS и разрешите HTTPS и UDP-обнаружение в домашней сети. <a href="https://github.com/sanecmp/sanea#system-installation">Полная инструкция</a></p>
+          </article>
+
+          <article class="install-card">
+            <div class="install-card-head">
+              <span>На компьютере ребёнка</span>
+              <h3>sanex</h3>
+            </div>
+            <ol>
+              <li>Скачайте установщик и запустите его от имени root.</li>
+              <li>В разделе «Компьютеры» sanea откройте регистрацию на 30 секунд.</li>
+              <li>Замените YOUR-CODE в команде на показанный в sanea код вида ABCD-EFGH.</li>
+            </ol>
+            <div class="command-block">
+              <button class="copy-button" type="button" data-copy="curl -fsSL https://raw.githubusercontent.com/sanecmp/sanex/main/install.sh -o install-sanex.sh &amp;&amp; sudo sh install-sanex.sh" aria-label="Скопировать команду" title="Скопировать команду">⧉</button>
+              <pre><code><span class="prompt">$</span> curl -fsSL \
+  https://raw.githubusercontent.com/sanecmp/sanex/main/install.sh \
+  -o install-sanex.sh &amp;&amp;
+sudo sh install-sanex.sh</code></pre>
+            </div>
+            <div class="command-block">
+              <button class="copy-button" type="button" data-copy="sudo /opt/sanex/bin/sanex register YOUR-CODE" aria-label="Скопировать команду" title="Скопировать команду">⧉</button>
+              <pre><code><span class="prompt">$</span> sudo /opt/sanex/bin/sanex register YOUR-CODE</code></pre>
+            </div>
+            <p class="config-note"><strong>После регистрации:</strong> служба запустится автоматически, а sanea получит список локальных учётных записей. Наблюдение останется выключено до вашего решения.</p>
+            <p class="config-note"><a href="https://github.com/sanecmp/sanex#system-installation">Полная инструкция</a></p>
+          </article>
+        </div>
+
+        <div class="install-requirements" id="updates">
+          <h3>Обновление</h3>
+          <div class="install-grid">
+            <article class="install-card">
+              <h4>sanea</h4>
+              <div class="command-block">
+                <button class="copy-button" type="button" data-copy="curl -fsSL https://raw.githubusercontent.com/sanecmp/sanea/main/install.sh -o install-sanea.sh &amp;&amp; sudo sh install-sanea.sh" aria-label="Скопировать команду" title="Скопировать команду">⧉</button>
+                <pre><code><span class="prompt">$</span> curl -fsSL \
+  https://raw.githubusercontent.com/sanecmp/sanea/main/install.sh \
+  -o install-sanea.sh &amp;&amp;
+sudo sh install-sanea.sh</code></pre>
+              </div>
+            </article>
+            <article class="install-card">
+              <h4>sanex</h4>
+              <div class="command-block">
+                <button class="copy-button" type="button" data-copy="curl -fsSL https://raw.githubusercontent.com/sanecmp/sanex/main/install.sh -o install-sanex.sh &amp;&amp; sudo sh install-sanex.sh" aria-label="Скопировать команду" title="Скопировать команду">⧉</button>
+                <pre><code><span class="prompt">$</span> curl -fsSL \
+  https://raw.githubusercontent.com/sanecmp/sanex/main/install.sh \
+  -o install-sanex.sh &amp;&amp;
+sudo sh install-sanex.sh</code></pre>
+              </div>
+            </article>
+          </div>
+          <p class="config-note">Автоматическое обновление sanex: «Компьютеры» → «Обновление sanex» в sanea; версия и https://pypi.org/simple.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta section-light">
+      <div class="container final-cta-inner">
+        <div>
+          <p class="eyebrow">sanecmp</p>
+          <h2>Локальная настройка ограничений и просмотр статистики.</h2>
+        </div>
+        <a class="button" href="#install">Перейти к установке</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <a class="wordmark" href="#top"><img src="favicon.svg" alt="">sane<span>cmp</span></a>
+      <p>Локальная система управления временем за компьютером.</p>
+      <a href="#top">Наверх</a>
+    </div>
+  </footer>
+</body>
+</html>
