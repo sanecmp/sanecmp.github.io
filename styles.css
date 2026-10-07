@@ -1057,7 +1057,9 @@ footer {
 
 .command-block pre {
   max-width: 100%;
+  overflow-wrap: anywhere;
   padding-right: 54px;
+  white-space: pre-wrap;
 }
 
 .copy-button {

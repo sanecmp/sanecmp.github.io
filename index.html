@@ -233,7 +233,7 @@
         </div>
 
         <p class="config-note install-requirements">
-          Для установки из основных веток GitHub добавьте --from-github к команде установщика.
+          Установщики поддерживают режим --from-github для установки из основных веток GitHub.
           Этот режим дополнительно требует git.
         </p>
 
@@ -253,13 +253,10 @@
             </div>
             <ol>
               <li>
-                Скачайте установщик и запустите его от имени root.
+                Запустите установщик от имени root.
                 <div class="command-block">
-                  <button class="copy-button" type="button" data-copy="curl -fsSL https://raw.githubusercontent.com/sanecmp/sanea/main/install.sh -o install-sanea.sh &amp;&amp; sudo sh install-sanea.sh" aria-label="Скопировать команду" title="Скопировать команду">⧉</button>
-                  <pre><code><span class="prompt">$</span> curl -fsSL \
-  https://raw.githubusercontent.com/sanecmp/sanea/main/install.sh \
-  -o install-sanea.sh &amp;&amp;
-sudo sh install-sanea.sh</code></pre>
+                  <button class="copy-button" type="button" data-copy="curl -fsSL https://raw.githubusercontent.com/sanecmp/sanea/main/install.sh | sudo sh" aria-label="Скопировать команду" title="Скопировать команду">⧉</button>
+                  <pre><code><span class="prompt">$</span> curl -fsSL https://raw.githubusercontent.com/sanecmp/sanea/main/install.sh | sudo sh</code></pre>
                 </div>
               </li>
               <li>
@@ -282,13 +279,10 @@ sudo sh install-sanea.sh</code></pre>
             </div>
             <ol>
               <li>
-                Скачайте установщик и запустите его от имени root.
+                Запустите установщик от имени root.
                 <div class="command-block">
-                  <button class="copy-button" type="button" data-copy="curl -fsSL https://raw.githubusercontent.com/sanecmp/sanex/main/install.sh -o install-sanex.sh &amp;&amp; sudo sh install-sanex.sh" aria-label="Скопировать команду" title="Скопировать команду">⧉</button>
-                  <pre><code><span class="prompt">$</span> curl -fsSL \
-  https://raw.githubusercontent.com/sanecmp/sanex/main/install.sh \
-  -o install-sanex.sh &amp;&amp;
-sudo sh install-sanex.sh</code></pre>
+                  <button class="copy-button" type="button" data-copy="curl -fsSL https://raw.githubusercontent.com/sanecmp/sanex/main/install.sh | sudo sh" aria-label="Скопировать команду" title="Скопировать команду">⧉</button>
+                  <pre><code><span class="prompt">$</span> curl -fsSL https://raw.githubusercontent.com/sanecmp/sanex/main/install.sh | sudo sh</code></pre>
                 </div>
               </li>
               <li>В разделе «Компьютеры» sanea откройте регистрацию на 30 секунд.</li>
@@ -311,25 +305,19 @@ sudo sh install-sanex.sh</code></pre>
             <article class="install-card">
               <h4>sanea</h4>
               <div class="command-block">
-                <button class="copy-button" type="button" data-copy="curl -fsSL https://raw.githubusercontent.com/sanecmp/sanea/main/install.sh -o install-sanea.sh &amp;&amp; sudo sh install-sanea.sh" aria-label="Скопировать команду" title="Скопировать команду">⧉</button>
-                <pre><code><span class="prompt">$</span> curl -fsSL \
-  https://raw.githubusercontent.com/sanecmp/sanea/main/install.sh \
-  -o install-sanea.sh &amp;&amp;
-sudo sh install-sanea.sh</code></pre>
+                <button class="copy-button" type="button" data-copy="curl -fsSL https://raw.githubusercontent.com/sanecmp/sanea/main/install.sh | sudo sh" aria-label="Скопировать команду" title="Скопировать команду">⧉</button>
+                <pre><code><span class="prompt">$</span> curl -fsSL https://raw.githubusercontent.com/sanecmp/sanea/main/install.sh | sudo sh</code></pre>
               </div>
             </article>
             <article class="install-card">
               <h4>sanex</h4>
               <div class="command-block">
-                <button class="copy-button" type="button" data-copy="curl -fsSL https://raw.githubusercontent.com/sanecmp/sanex/main/install.sh -o install-sanex.sh &amp;&amp; sudo sh install-sanex.sh" aria-label="Скопировать команду" title="Скопировать команду">⧉</button>
-                <pre><code><span class="prompt">$</span> curl -fsSL \
-  https://raw.githubusercontent.com/sanecmp/sanex/main/install.sh \
-  -o install-sanex.sh &amp;&amp;
-sudo sh install-sanex.sh</code></pre>
+                <button class="copy-button" type="button" data-copy="curl -fsSL https://raw.githubusercontent.com/sanecmp/sanex/main/install.sh | sudo sh" aria-label="Скопировать команду" title="Скопировать команду">⧉</button>
+                <pre><code><span class="prompt">$</span> curl -fsSL https://raw.githubusercontent.com/sanecmp/sanex/main/install.sh | sudo sh</code></pre>
               </div>
             </article>
           </div>
-          <p class="config-note">Автоматическое обновление sanex: «Компьютеры» → «Обновление sanex» в sanea; версия и https://pypi.org/simple.</p>
+          <p class="config-note">Обновить sanex можно через интерфейс sanea. В разделе «Компьютеры» укажите нужную версию в блоке «Обновление sanex» и запустите обновление.</p>
         </div>
       </div>
     </section>
