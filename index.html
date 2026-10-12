@@ -240,10 +240,22 @@
         <p class="config-note install-requirements">
           <strong>Перед установкой:</strong>
           нужны curl, системный Python 3.12+ и
-          <a href="https://docs.astral.sh/uv/getting-started/installation/">uv</a>.
+          <a href="https://docs.astral.sh/uv/reference/installer/">uv</a>.
           Python и uv должны принадлежать root и быть недоступны ребёнку для изменения.
           Для sanex требуется Debian-based Linux с GNOME, systemd и AccountsService на x86-64.
         </p>
+
+        <div class="install-requirements">
+          <p class="config-note">
+            <strong>Системная установка uv:</strong>
+            выполните команду на каждом компьютере с sanea или sanex.
+            Пользовательская установка uv не подходит для системных служб.
+          </p>
+          <div class="command-block">
+            <button class="copy-button" type="button" data-copy="curl -LsSf https://astral.sh/uv/install.sh | sudo env UV_INSTALL_DIR=/usr/local/bin UV_NO_MODIFY_PATH=1 sh" aria-label="Скопировать команду" title="Скопировать команду">⧉</button>
+            <pre><code><span class="prompt">$</span> curl -LsSf https://astral.sh/uv/install.sh | sudo env UV_INSTALL_DIR=/usr/local/bin UV_NO_MODIFY_PATH=1 sh</code></pre>
+          </div>
+        </div>
 
         <div class="install-grid">
           <article class="install-card">

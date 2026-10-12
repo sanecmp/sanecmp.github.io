@@ -72,6 +72,8 @@
     "Перед установкой:": "Before installation:",
     "нужны curl, системный Python 3.12+ и": "you need curl, system Python 3.12+ and",
     ". Python и uv должны принадлежать root и быть недоступны ребёнку для изменения. Для sanex требуется Debian-based Linux с GNOME, systemd и AccountsService на x86-64.": ". Python and uv must be owned by root and must not be writable by the child. sanex requires Debian-based Linux with GNOME, systemd and AccountsService on x86-64.",
+    "Системная установка uv:": "System-wide uv installation:",
+    "выполните команду на каждом компьютере с sanea или sanex. Пользовательская установка uv не подходит для системных служб.": "run the command on each computer hosting sanea or sanex. A user installation of uv is not suitable for system services.",
     "На компьютере родителя или NAS": "On the parent's computer or NAS",
     "На компьютере ребёнка": "On the child's computer",
     "Запустите установщик от имени root.": "Run the installer as root.",
