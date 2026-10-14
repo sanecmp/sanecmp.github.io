@@ -77,6 +77,7 @@
     "На компьютере родителя или NAS": "On the parent's computer or NAS",
     "На компьютере ребёнка": "On the child's computer",
     "Запустите установщик от имени root.": "Run the installer as root.",
+    "Или установите самый свежий код из GitHub — он может быть нестабилен:": "Or install the latest code from GitHub — it may be unstable:",
     "Создайте учётную запись администратора.": "Create an administrator account.",
     "На компьютере с sanea откройте": "On the computer running sanea, open",
     "и войдите.": "and sign in.",
