@@ -198,7 +198,7 @@
           <li>
             <span>01</span>
             <h3>Запустите sanea</h3>
-            <p>Установщик настроит и запустит службу на родительском компьютере или домашнем NAS.</p>
+            <p>По умолчанию установщик настроит и запустит службу на родительском компьютере или домашнем NAS.</p>
           </li>
           <li>
             <span>02</span>
@@ -228,7 +228,7 @@
           </div>
           <p class="lead">
             Установщики размещают приложения и настраивают системные службы.
-            sanea запускается сразу, sanex — после регистрации компьютера.
+            По умолчанию sanea запускается сразу, sanex — после регистрации компьютера.
           </p>
         </div>
 
@@ -275,6 +275,12 @@
                   <button class="copy-button" type="button" data-copy="curl -fsSL https://raw.githubusercontent.com/sanecmp/sanea/main/install.sh | sudo sh -s -- --from-github" aria-label="Скопировать команду" title="Скопировать команду">⧉</button>
                   <pre><code><span class="prompt">$</span> curl -fsSL https://raw.githubusercontent.com/sanecmp/sanea/main/install.sh | sudo sh -s -- --from-github</code></pre>
                 </div>
+                <p class="config-note"><strong>Или установите без автозапуска:</strong></p>
+                <div class="command-block">
+                  <button class="copy-button" type="button" data-copy="curl -fsSL https://raw.githubusercontent.com/sanecmp/sanea/main/install.sh | sudo sh -s -- --no-autostart" aria-label="Скопировать команду" title="Скопировать команду">⧉</button>
+                  <pre><code><span class="prompt">$</span> curl -fsSL https://raw.githubusercontent.com/sanecmp/sanea/main/install.sh | sudo sh -s -- --no-autostart</code></pre>
+                </div>
+                <p class="config-note">После создания администратора запускайте sanea командой sudo sanea serve. Для остановки нажмите Ctrl+C.</p>
               </li>
               <li>
                 Создайте учётную запись администратора.
@@ -285,7 +291,7 @@
               </li>
               <li>На компьютере с sanea откройте <a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a> и войдите.</li>
             </ol>
-            <p class="config-note"><strong>Установщик сделает остальное:</strong> создаст локальную базу и ключи, настроит автозапуск и сразу запустит sanea.</p>
+            <p class="config-note"><strong>Установщик сделает остальное:</strong> создаст локальную базу и ключи; по умолчанию также настроит автозапуск и сразу запустит sanea.</p>
             <p class="config-note"><strong>Если sanea и sanex на разных компьютерах:</strong> локальные IP-адреса sanea установщик добавит в SANEA_ALLOWED_HOSTS при установке. Разрешите HTTPS и UDP-обнаружение в домашней сети. <a href="https://github.com/sanecmp/sanea/blob/main/docs/index.md#home-network-access">Полная инструкция</a></p>
           </article>
 
@@ -330,6 +336,7 @@
                 <button class="copy-button" type="button" data-copy="curl -fsSL https://raw.githubusercontent.com/sanecmp/sanea/main/install.sh | sudo sh" aria-label="Скопировать команду" title="Скопировать команду">⧉</button>
                 <pre><code><span class="prompt">$</span> curl -fsSL https://raw.githubusercontent.com/sanecmp/sanea/main/install.sh | sudo sh</code></pre>
               </div>
+              <p class="config-note">Если sanea запущена вручную, остановите её перед обновлением. Выбранный режим автозапуска сохранится.</p>
             </article>
             <article class="install-card">
               <h4>sanex</h4>
